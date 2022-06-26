@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/buscar_contactos_menu"
+        android:background="@android:drawable/ic_menu_search"
+        android:icon="@drawable/archivos"
+
+        android:title="@string/buscar_contactos_menu"
+        android:visible="true"
+        app:showAsAction="never"></item>
+
+
+    <item
+        android:id="@+id/miperfil_menu"
+        android:title="@string/miperfil_menu"
+        app:showAsAction="never"></item>
+
+    <item
+        android:id="@+id/cerrarsesion_menu"
+        android:title="@string/cerrarsesion_menu"
+        app:showAsAction="never"></item>
+
+
+</menu>
