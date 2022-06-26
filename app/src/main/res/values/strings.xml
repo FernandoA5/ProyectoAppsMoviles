@@ -35,27 +35,25 @@
 
     <string name="display_name" translatable="false">Nombre</string>
 
-    <string name= "MI_ESTADO" >Mi Estado</string>
-    <string name= "Genero" >Genero</string>
-    <string name= "Edad" >Edad</string>
-    <string name= "Ciudad" >Ciudad</string>
-    <string name= "Nombre" >Nombre</string>
+    <string name="MI_ESTADO">Mi Estado</string>
+    <string name="Genero">Genero</string>
+    <string name="Edad">Edad</string>
+    <string name="Ciudad">Ciudad</string>
+    <string name="Nombre">Nombre</string>
 
 
-    <string name= "actualizar_informacion" >Actualizar informacion</string>
+    <string name="actualizar_informacion">Actualizar informacion</string>
 
 
+    <string name="Chats">Chats</string>
+    <string name="Grupos">Grupos</string>
+    <string name="Contactos">Contactos</string>
+    <string name="Solicitudes">Solicitudes</string>
 
-
-    <string name= "Chats" >Chats</string>
-    <string name= "Grupos" >Grupos</string>
-    <string name= "Contactos" >Contactos</string>
-    <string name= "Solicitudes" >Solicitudes</string>
-
-    <string name= "buscar_contactos_menu" >Buscar</string>
-    <string name= "miperfil_menu" >Mi Perfil</string>
-    <string name= "cerrarsesion_menu" >cerrar sesion</string>
-    <string name= "error_invalid_parent" >la contraseña no coincide</string>
+    <string name="buscar_contactos_menu">Buscar</string>
+    <string name="miperfil_menu">Mi Perfil</string>
+    <string name="cerrarsesion_menu">cerrar sesion</string>
+    <string name="error_invalid_parent">la contraseña no coincide</string>
     <string name="cancelar_solicitud">CANCELAR SOLICITUD</string>
     <string name="cambiar_idioma">Cambiar idioma</string>
     <string name="ingresar_mensaje">Ingrese el mensaje</string>
