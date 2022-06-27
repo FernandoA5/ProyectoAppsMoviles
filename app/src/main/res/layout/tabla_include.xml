@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/tabla"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_background_table"
+        android:layout_marginTop="@dimen/margin_buttons_menu"
+        android:background="@color/white"
+
+        android:orientation="vertical"
+        android:paddingTop="@dimen/margin_buttons_menu"
+        android:paddingBottom="@dimen/margin_buttons_menu"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_rows"
+            android:background="@color/tabla_sombra"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_button"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/fecha"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/texto_table"
+                app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule" />
+
+            <TextView
+                android:id="@+id/dateResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/resultado_fecha"
+                android:textColor="@color/white"
+                android:textSize="@dimen/texto_table"
+                app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_rows"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_button"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/dateStart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/range_date_start"
+                android:textAlignment="center"
+                android:textColor="@color/tabla_sombra"
+                android:textSize="@dimen/texto_table"
+                app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule" />
+
+            <TextView
+                android:id="@+id/dateEnd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/range_date_start"
+                android:textColor="@color/tabla_sombra"
+                android:textSize="@dimen/texto_table"
+                app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_rows"
+            android:background="@color/tabla_sombra"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_button"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/status"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/texto_table"
+                app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule" />
+
+            <TextView
+                android:id="@+id/statusResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/statusResult"
+                android:textColor="@color/white"
+                android:textSize="@dimen/texto_table"
+                app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_rows"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_button"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/IntensidadUV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/IntensidadUV"
+                android:textAlignment="center"
+                android:textColor="@color/tabla_sombra"
+                android:textSize="@dimen/texto_table"
+                app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule" />
+
+            <TextView
+                android:id="@+id/IntensidadUVResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/IntensidadUVResult"
+                android:textColor="@color/tabla_sombra"
+                android:textSize="@dimen/texto_table"
+                app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_rows"
+            android:background="@color/tabla_sombra"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_button"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/humedad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/humedad"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/humedadResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/humedadResult"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_rows"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_button"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/presion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/presion"
+                android:textColor="@color/tabla_sombra" />
+
+            <TextView
+                android:id="@+id/presionResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/presionResult"
+                android:textColor="@color/tabla_sombra" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_rows"
+            android:background="@color/tabla_sombra"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/padding_button"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/temperatura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/temperatura"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/temperaturaResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/margin_rows"
+                android:layout_marginTop="@dimen/margin_buttons_menu"
+                android:layout_weight="1"
+                android:text="@string/temperaturaResult"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
