@@ -78,8 +78,17 @@
     <string name="estacion_meteorologica">Estación Meteorológica</string>
     <string name="range_date_start">Feche: ...</string>
     <string name="range_date_end">Feche: ...</string>
+    <string name="status">Estado:</string>
+    <string name="statusResult">Soleado</string>
     <string name="IntensidadUV">Intensidad UV</string>
     <string name="IntensidadUVResult">0.25</string>
+    <string name="humedad">Humedad:</string>
+    <string name="humedadResult">22%</string>
+    <string name="presion">Presión:</string>
+    <string name="presionResult">968.58 mbar</string>
+    <string name="temperatura">Temperatura:</string>
+    <string name="temperaturaResult">26.19 C°</string>
+
 
 
 </resources>
