@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/tabla_sombra"
+    android:background="#F5F5F5"
     tools:context=".EstacionMeteorologica">
 
     <include
@@ -99,6 +99,7 @@
                 android:layout_marginHorizontal="@dimen/margin_background_table"
                 android:layout_marginTop="@dimen/margin_buttons_menu"
                 android:background="@color/white"
+
                 android:orientation="vertical"
                 android:paddingTop="@dimen/margin_buttons_menu"
                 android:paddingBottom="@dimen/margin_buttons_menu"
