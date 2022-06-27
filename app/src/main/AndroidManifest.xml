@@ -14,6 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Whatsappro">
         <activity
+            android:name=".ReporteActivity"
+            android:exported="false" />
+        <activity
             android:name=".EstacionMeteorologica"
             android:exported="false" />
         <activity android:name=".ImagenActivity" />

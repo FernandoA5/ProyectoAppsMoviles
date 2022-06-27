@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F0F0F0"
+    android:background="#EAEAEA"
     tools:context=".EstacionMeteorologica">
 
     <include
@@ -15,8 +15,8 @@
         android:id="@+id/textViewSaludo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_title"
         android:layout_marginStart="@dimen/margin_title"
+        android:layout_marginTop="@dimen/margin_title"
         android:text="@string/estacion_meteorologica"
         android:textColor="@color/white"
         android:textSize="@dimen/texto_menus"
@@ -94,8 +94,11 @@
 
             <include
                 android:id="@+id/tabla"
-                layout="@layout/tabla_include"
-                />
+                layout="@layout/item_tabla"
+                android:layout_marginHorizontal="@dimen/margin_buttons_menu"
+                android:layout_marginVertical="@dimen/margin_buttons_menu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>

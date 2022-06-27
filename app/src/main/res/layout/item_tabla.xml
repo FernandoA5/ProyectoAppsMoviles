@@ -1,28 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    app:cardUseCompatPadding="true"
+    android:layout_height="wrap_content">
 
 
     <LinearLayout
         android:id="@+id/tabla"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/margin_background_table"
-        android:layout_marginTop="@dimen/margin_buttons_menu"
         android:background="@color/white"
-
         android:orientation="vertical"
-        android:paddingTop="@dimen/margin_buttons_menu"
-        android:paddingBottom="@dimen/margin_buttons_menu"
-        app:layout_constraintTop_toTopOf="parent">
+        android:paddingHorizontal="@dimen/margin_background_table"
+        android:paddingVertical="@dimen/margin_buttons_menu">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_rows"
             android:background="@color/tabla_sombra"
             android:orientation="horizontal"
             android:paddingBottom="@dimen/padding_button"
@@ -57,7 +53,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_rows"
             android:background="@color/white"
             android:orientation="horizontal"
             android:paddingBottom="@dimen/padding_button"
@@ -88,10 +83,10 @@
                 android:textSize="@dimen/texto_table"
                 app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_rows"
             android:background="@color/tabla_sombra"
             android:orientation="horizontal"
             android:paddingBottom="@dimen/padding_button"
@@ -126,7 +121,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_rows"
             android:background="@color/white"
             android:orientation="horizontal"
             android:paddingBottom="@dimen/padding_button"
@@ -161,7 +155,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_rows"
             android:background="@color/tabla_sombra"
             android:orientation="horizontal"
             android:paddingBottom="@dimen/padding_button"
@@ -191,7 +184,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_rows"
             android:background="@color/white"
             android:orientation="horizontal"
             android:paddingBottom="@dimen/padding_button"
@@ -221,7 +213,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/margin_rows"
             android:background="@color/tabla_sombra"
             android:orientation="horizontal"
             android:paddingBottom="@dimen/padding_button"
@@ -248,4 +239,4 @@
                 android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
