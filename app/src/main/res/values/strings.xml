@@ -69,6 +69,17 @@
     <string name="cancelar">Cancelar</string>
     <string name="mensaje">Recibir Mensaje</string>
     <string name="mensaje_usuario">Enviar Mensaje Usuario</string>
+    <string name="mandar_a_llamar_datos">Mandar a llamar datos</string>
+    <string name="reportes_de_hoy">Reportes de hoy</string>
+    <string name="reportes_semana_pasada">Reportes semana pasada</string>
+    <string name="calendario_de_reportes">Calendario de reportes</string>
+    <string name="resultado_fecha">9:18 - 22/06/22</string>
+    <string name="fecha">Fecha:</string>
+    <string name="estacion_meteorologica">Estación Meteorológica</string>
+    <string name="range_date_start">Feche: ...</string>
+    <string name="range_date_end">Feche: ...</string>
+    <string name="IntensidadUV">Intensidad UV</string>
+    <string name="IntensidadUVResult">0.25</string>
 
 
 </resources>
