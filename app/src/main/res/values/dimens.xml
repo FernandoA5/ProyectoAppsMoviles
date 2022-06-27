@@ -3,6 +3,8 @@
     <dimen name="margin">16dp</dimen>
     <dimen name="margin_big">32dp</dimen>
     <dimen name="padding_normal">16dp</dimen>
+    <dimen name="texto_menus">21sp</dimen>
+    <dimen name="padding_menus">30dp</dimen>
 
 
 </resources>
