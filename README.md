@@ -8,4 +8,4 @@ Done:
 »Terminada primer pantalla de la estación Meteorológica
 
 To-Do:
-»Pantallas de reportes
+»Actualizar pantallas
