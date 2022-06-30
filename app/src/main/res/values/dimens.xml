@@ -4,6 +4,7 @@
     <dimen name="margin_big">32dp</dimen>
     <dimen name="padding_normal">16dp</dimen>
     <dimen name="texto_menus">21sp</dimen>
+    <dimen name="texto_titulos">24dp</dimen>
     <dimen name="texto_table">16sp</dimen>
     <dimen name="padding_menus">30dp</dimen>
     <dimen name="margin_buttons_menu">20dp</dimen>
@@ -13,6 +14,7 @@
     <dimen name="padding_tabla">15dp</dimen>
     <dimen name="padding_button">18dp</dimen>
     <dimen name="margin_title">15dp</dimen>
+    <dimen name="logo_size">90dp</dimen>
 
 
 </resources>

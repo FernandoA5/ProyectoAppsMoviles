@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="#002077"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingLeft="@dimen/margin"
@@ -15,25 +14,46 @@
     android:paddingRight="@dimen/margin"
     android:paddingBottom="@dimen/margin">
 
+    <ImageButton
+        android:id="@+id/iconoIdioma"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_launcher_foreground"
+        android:background="#002077"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/ivLogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_big"
+        android:layout_width="@dimen/logo_size"
+        android:layout_height="@dimen/logo_size"
+        android:layout_marginTop="24dp"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ContentDescription" />
 
+    <TextView
+        android:id="@+id/tvAcceder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_big"
+        android:text="Acceder"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/texto_titulos"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivLogo" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/textLabel"
-
-        app:layout_constraintTop_toBottomOf="@id/ivLogo"
+        app:layout_constraintTop_toBottomOf="@id/tvAcceder"
         tools:layout_editor_absoluteX="4dp"
         tools:layout_editor_absoluteY="156dp">
 
@@ -55,7 +75,7 @@
         android:id="@+id/tilEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_big"
+        android:layout_marginTop="@dimen/padding_normal"
         android:theme="@style/textLabel"
         app:layout_constraintTop_toBottomOf="@id/tilname">
 
@@ -65,7 +85,6 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_menu_email"
             android:drawablePadding="@dimen/padding_normal"
-
             android:inputType="textEmailAddress"
             android:maxLines="1"
             android:singleLine="true"
@@ -87,16 +106,15 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_password"
             android:drawablePadding="@dimen/padding_normal"
-
             android:imeActionId="6"
             android:imeActionLabel="@string/action_sign_in_short"
             android:imeOptions="actionUnspecified"
             android:inputType="textPassword"
             android:maxLines="1"
             android:singleLine="true"
+            android:textColor="@android:color/white"
             app:errorEnabled="true"
-            app:errorIconDrawable="@null"
-            android:textColor="@android:color/white" />
+            app:errorIconDrawable="@null" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,58 +141,74 @@
             android:inputType="textPassword"
             android:maxLines="1"
             android:singleLine="true"
+            android:textColor="@android:color/white"
             app:errorEnabled="true"
-            app:errorIconDrawable="@null"
-            android:textColor="@android:color/white" />
+            app:errorIconDrawable="@null" />
 
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
-    <CheckBox
-        android:id="@+id/box2"
+    <TextView
+        android:id="@+id/strTipoCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="72dp"
-        android:buttonTint="#F3B7F373"
-        android:text="@string/box2"
+        android:paddingVertical="10dp"
+        android:text="Tipo de cuenta"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignInUp"
-        app:layout_constraintEnd_toStartOf="@+id/box1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tilPassword2" />
-
-    <CheckBox
-        android:id="@+id/box1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="75dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="69dp"
-        android:buttonTint="@color/colorAccent"
-        android:text="@string/box1"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignInUp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/box2"
-        app:layout_constraintTop_toBottomOf="@+id/tilPassword2"
-        tools:visibility="visible" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilPassword2" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/checkboxes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/strTipoCuenta">
+
+        <CheckBox
+            android:id="@+id/box2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="42dp"
+            android:buttonTint="@color/color_botones"
+            android:text="@string/box2"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btnSignInUp"
+            app:layout_constraintEnd_toStartOf="@+id/box1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/strTipoCuenta" />
+
+        <CheckBox
+            android:id="@+id/box1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:buttonTint="@color/color_botones"
+            android:text="@string/box1"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/btnSignInUp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/box2"
+            app:layout_constraintTop_toBottomOf="@+id/strTipoCuenta"
+            tools:visibility="visible" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
     <Button
         android:id="@+id/btnSignInUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
+        android:layout_marginTop="10dp"
         android:text="@string/create_account"
         android:textStyle="bold"
         android:theme="@style/btnLoginStyle"
-        app:layout_constraintTop_toBottomOf="@id/tilPassword"
+        app:layout_constraintTop_toBottomOf="@id/checkboxes"
         tools:layout_editor_absoluteX="16dp" />
 
     <TextView
@@ -187,7 +221,6 @@
         android:textColor="@android:color/white"
         app:layout_constraintTop_toBottomOf="@id/btnSignInUp"
         tools:layout_editor_absoluteX="7dp" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

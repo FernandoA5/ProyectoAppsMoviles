@@ -1,4 +1,5 @@
 package azoftware.com.whatsappro;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,11 +11,13 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
@@ -30,7 +33,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.concurrent.TimeUnit;
-
 
 
 import android.content.Intent;
@@ -50,17 +52,18 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-
 public class LoginActivity extends AppCompatActivity {
     private final String TAG = "loginactivity";
+    private final String LOGO = "https://i.ibb.co/QbYHBWx/Whats-App-Image-2022-06-29-at-2-38-57-PM.png";
+    private final String ICONO_IDIOMA= "https://i.ibb.co/GPtTz1h/image.png";
     EditText etEmail, etname;
-   EditText etPassword, etPassword2;
+    EditText etPassword, etPassword2;
     Button btnSignInUp;
-     TextView tvSignInUp;
-  TextInputLayout tilname, tilPassword2;
+    TextView tvSignInUp;
+    TextInputLayout tilname, tilPassword2;
+    ImageView imageView;
+    ImageView iVIdioma;
     public static int lang_selected;
-
-
 
 
     private FirebaseAuth mAuth;
@@ -71,28 +74,28 @@ public class LoginActivity extends AppCompatActivity {
     Resources resources;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        etEmail =(EditText) findViewById(R.id.etEmail);
-        etname =(EditText) findViewById(R.id.etname);
-        etPassword=(EditText)findViewById(R.id.etPassword);
-        etPassword2=(EditText)findViewById(R.id.etPassword2);
-        btnSignInUp = (Button)findViewById(R.id.btnSignInUp);
+        etEmail = (EditText) findViewById(R.id.etEmail);
+        etname = (EditText) findViewById(R.id.etname);
+        etPassword = (EditText) findViewById(R.id.etPassword);
+        etPassword2 = (EditText) findViewById(R.id.etPassword2);
+        btnSignInUp = (Button) findViewById(R.id.btnSignInUp);
         tvSignInUp = (TextView) findViewById(R.id.tvSignInUp);
         isbox1 = (CheckBox) findViewById(R.id.box1);
         isbox2 = (CheckBox) findViewById(R.id.box2);
-        tilname = (TextInputLayout)findViewById(R.id.tilname);
-        tilPassword2 = (TextInputLayout)findViewById(R.id.tilPassword2);
+        tilname = (TextInputLayout) findViewById(R.id.tilname);
+        tilPassword2 = (TextInputLayout) findViewById(R.id.tilPassword2);
 
-        show_lan_dialog = (RelativeLayout)findViewById(R.id.showlangdialog);
-        if(LocaleHelper.getLanguage(LoginActivity.this).equalsIgnoreCase("es"))
-        {
-            context = LocaleHelper.setLocale(LoginActivity.this,"es");
-            resources =context.getResources();
+        show_lan_dialog = (RelativeLayout) findViewById(R.id.showlangdialog);
+
+        //ESTO SE PUEDE OPTIMIZAR, REVISAR DESPUES
+        if (LocaleHelper.getLanguage(LoginActivity.this).equalsIgnoreCase("es")) {
+            context = LocaleHelper.setLocale(LoginActivity.this, "es");
+            resources = context.getResources();
 
             etEmail.setHint(resources.getString(R.string.prompt_email));
             etPassword.setHint(resources.getString(R.string.prompt_password));
@@ -104,11 +107,11 @@ public class LoginActivity extends AppCompatActivity {
             isbox1.setText(resources.getString(R.string.box1));
             isbox2.setText(resources.getString(R.string.box2));
             lang_selected = 0;
-        }else if(LocaleHelper.getLanguage(LoginActivity.this).equalsIgnoreCase("en")){
-            context = LocaleHelper.setLocale(LoginActivity.this,"en");
-            resources =context.getResources();
+        } else if (LocaleHelper.getLanguage(LoginActivity.this).equalsIgnoreCase("en")) {
+            context = LocaleHelper.setLocale(LoginActivity.this, "en");
+            resources = context.getResources();
             //*etEmail.setHint(resources.getString(R.string.prompt_email));
-           //* etPassword.setHint(resources.getString(R.string.prompt_password));
+            //* etPassword.setHint(resources.getString(R.string.prompt_password));
             btnSignInUp.setText(resources.getString(R.string.action_sign_up));
             etEmail.setHint(resources.getString(R.string.prompt_email));
             etPassword.setHint(resources.getString(R.string.prompt_password));
@@ -117,9 +120,13 @@ public class LoginActivity extends AppCompatActivity {
             tvSignInUp.setText(resources.getString(R.string.sign_in_free));
             isbox1.setText(resources.getString(R.string.box1));
             isbox2.setText(resources.getString(R.string.box2));
-            lang_selected =1;
+            lang_selected = 1;
         }
 
+        imageView = findViewById(R.id.ivLogo);
+        iVIdioma = findViewById(R.id.iconoIdioma);
+        Glide.with(this).load(LOGO).error(R.drawable.ic_launcher_background).into(imageView);
+        Glide.with(this).load(ICONO_IDIOMA).error(R.drawable.ic_launcher_background).into(iVIdioma);
 
 
         initViews();
@@ -130,8 +137,8 @@ public class LoginActivity extends AppCompatActivity {
     private void initViews() {
         etEmail = findViewById(R.id.etEmail);
         etname = findViewById(R.id.etname);
-        tilname = (TextInputLayout)findViewById(R.id.tilname);
-        tilPassword2 = (TextInputLayout)findViewById(R.id.tilPassword2);
+        tilname = (TextInputLayout) findViewById(R.id.tilname);
+        tilPassword2 = (TextInputLayout) findViewById(R.id.tilPassword2);
         etPassword = findViewById(R.id.etPassword);
         etPassword2 = findViewById(R.id.etPassword2);
         btnSignInUp = findViewById(R.id.btnSignInUp);
@@ -143,7 +150,7 @@ public class LoginActivity extends AppCompatActivity {
         isbox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (buttonView.isChecked()){
+                if (buttonView.isChecked()) {
                     isbox2.setChecked(false);
                 }
 
@@ -151,12 +158,10 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
-
         isbox2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (buttonView.isChecked()){
+                if (buttonView.isChecked()) {
                     isbox1.setChecked(false);
                 }
 
@@ -165,27 +170,19 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
     private boolean checkCredentials(String email, String password, String name, String confirm) {
-
 
 
         if (!email.contains("@") || email.length() < 6) {
             onInvalidEmail(R.string.error_invalid_email);
             return false;
-        }
-        else if (password.length() < 6) {
+        } else if (password.length() < 6) {
             onInvalidPassword(R.string.error_invalid_password);
             return false;
-        }
-        else if (password.length() != confirm.length()) {
+        } else if (password.length() != confirm.length()) {
             onInvalidcontraseñas(R.string.error_invalid_parent);
             return false;
-        }
-        else if(!name.toString().matches("[a-zA-Z ]+") ){
+        } else if (!name.toString().matches("[a-zA-Z ]+")) {
             onInvalidName(R.string.error_invalid_parent);
             return false;
         }
@@ -218,8 +215,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private void registerNewUser(String email, String password, String name) {
 
-        if (!(isbox2.isChecked() || isbox1.isChecked())){
-            Toast.makeText(LoginActivity.this ,"Solo se puede una" , Toast.LENGTH_SHORT).show();
+        if (!(isbox2.isChecked() || isbox1.isChecked())) {
+            Toast.makeText(LoginActivity.this, "Solo se puede una", Toast.LENGTH_SHORT).show();
             return;
 
         }
@@ -229,31 +226,28 @@ public class LoginActivity extends AppCompatActivity {
         String password1 = inputPassword.getText().toString();
         String password2 = inputPassword2.getText().toString();
 
-       if(password1.equals(password2)) {
+        if (password1.equals(password2)) {
 
 
-           mAuth.createUserWithEmailAndPassword(email, password)
-                   .addOnCompleteListener(this, task -> {
-                       if (task.isSuccessful()) { // Sign in success,
-                           Log.d(TAG, "createUserWithEmail:success");
-                           FirebaseUser user = mAuth.getCurrentUser();
-                           sendEmailVerification(user);
-                       } else { // If sign in fails
-                           Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                           Toast.makeText(LoginActivity.this, "Error while registering new user", Toast.LENGTH_SHORT).show();
-                       }
-                   });
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, task -> {
+                        if (task.isSuccessful()) { // Sign in success,
+                            Log.d(TAG, "createUserWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            sendEmailVerification(user);
+                        } else { // If sign in fails
+                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                            Toast.makeText(LoginActivity.this, "Error while registering new user", Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
 
-        }else {
+        } else {
 
-           Toast.makeText(LoginActivity.this ,"Las contraseñas no son iguales", Toast.LENGTH_SHORT).show();
-           return;
+            Toast.makeText(LoginActivity.this, "Las contraseñas no son iguales", Toast.LENGTH_SHORT).show();
+            return;
 
-       }
-
-
-
+        }
 
 
     }
@@ -272,14 +266,13 @@ public class LoginActivity extends AppCompatActivity {
                 });
     }
 
-    private void showConfirmationDialog(int title, String msg){
+    private void showConfirmationDialog(int title, String msg) {
         AlertDialog.Builder dlg = new AlertDialog.Builder(this);
         dlg.setMessage(msg);
         dlg.setTitle(title);
         dlg.setPositiveButton(R.string.ok, null);
         dlg.show();
     }
-
 
 
     private void loginUser(String email, String password) {
@@ -309,7 +302,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 }
 
-          }
+            }
 
         });
     }
@@ -340,7 +333,7 @@ public class LoginActivity extends AppCompatActivity {
             } else { // if the user wants to login
                 tilname.setVisibility(View.INVISIBLE);
                 tilPassword2.setVisibility(View.INVISIBLE);
-               etname.setVisibility(View.INVISIBLE);
+                etname.setVisibility(View.INVISIBLE);
                 etPassword2.setVisibility(View.INVISIBLE);
 
                 onChangeContent(R.string.action_sign_in, R.string.create_account);
@@ -349,14 +342,13 @@ public class LoginActivity extends AppCompatActivity {
         btnSignInUp.setOnClickListener(view -> {
 
             if (createNewAccount) { // user wants to create a new acco
-                if (checkCredentials(etEmail.getText().toString(), etPassword.getText().toString(),etname.getText().toString(),etPassword2.getText().toString())) {
+                if (checkCredentials(etEmail.getText().toString(), etPassword.getText().toString(), etname.getText().toString(), etPassword2.getText().toString())) {
                     registerNewUser(etEmail.getText().toString(), etPassword.getText().toString(), etname.getText().toString());
 
                 }
+            } else { // User wants to login in with an existing account
+                loginUser(etEmail.getText().toString(), etPassword.getText().toString());
             }
-            else { // User wants to login in with an existing account
-                    loginUser(etEmail.getText().toString(), etPassword.getText().toString());
-                }
 
         });
     }
@@ -371,7 +363,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         updateUI(currentUser);
-        if (currentUser != null){
+        if (currentUser != null) {
             EnviarAlInicio();
         }
     }

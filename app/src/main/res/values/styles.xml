@@ -17,9 +17,9 @@
     </style>
 
     <style name="btnLoginStyle" parent="Theme.AppCompat.Light">
-        <item name="colorButtonNormal">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/color_botones</item>
         <item name="colorControlHighlight">@color/colorPrimary</item>
-        <item name="android:textColor">#FFFF</item>
+        <item name="android:textColor">#115458</item>
     </style>
 
 </resources>
