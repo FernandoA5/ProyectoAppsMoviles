@@ -13,11 +13,10 @@
     android:paddingTop="@dimen/margin"
     android:paddingRight="@dimen/margin"
     android:paddingBottom="@dimen/margin">
-
     <ImageButton
         android:id="@+id/iconoIdioma"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:src="@drawable/ic_launcher_foreground"
         android:background="#002077"
         app:layout_constraintStart_toStartOf="parent"

@@ -31,8 +31,7 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessaging;
-
-import java.util.concurrent.TimeUnit;
+//import java.util.concurrent.TimeUnit;
 
 
 import android.content.Intent;
@@ -51,11 +50,14 @@ import com.google.firebase.auth.FirebaseUser;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class LoginActivity extends AppCompatActivity {
+
+    //DECLARACIÓN DE CONSTANTES GLOBALES
     private final String TAG = "loginactivity";
     private final String LOGO = "https://i.ibb.co/QbYHBWx/Whats-App-Image-2022-06-29-at-2-38-57-PM.png";
     private final String ICONO_IDIOMA= "https://i.ibb.co/GPtTz1h/image.png";
+
+    //DECLARACIÓN DE VARIABLES GLOBALES
     EditText etEmail, etname;
     EditText etPassword, etPassword2;
     Button btnSignInUp;
@@ -64,14 +66,13 @@ public class LoginActivity extends AppCompatActivity {
     ImageView imageView;
     ImageView iVIdioma;
     public static int lang_selected;
-
-
     private FirebaseAuth mAuth;
     private boolean createNewAccount = true;
     CheckBox isbox1, isbox2;
     RelativeLayout show_lan_dialog;
     Context context;
     Resources resources;
+    //private ActivityLoginBinding binding;
 
 
     @Override
@@ -79,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //OBTENIENDO ENTIDADES XML Y ALMACENANDOLAS EN VARIABLES
         etEmail = (EditText) findViewById(R.id.etEmail);
         etname = (EditText) findViewById(R.id.etname);
         etPassword = (EditText) findViewById(R.id.etPassword);
@@ -91,6 +93,12 @@ public class LoginActivity extends AppCompatActivity {
         tilPassword2 = (TextInputLayout) findViewById(R.id.tilPassword2);
 
         show_lan_dialog = (RelativeLayout) findViewById(R.id.showlangdialog);
+
+        //DEFINICIÓN DE BINDING
+        //binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        //setContentView(binding.getRoot());
+
+
 
         //ESTO SE PUEDE OPTIMIZAR, REVISAR DESPUES
         if (LocaleHelper.getLanguage(LoginActivity.this).equalsIgnoreCase("es")) {
