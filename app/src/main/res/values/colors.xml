@@ -13,4 +13,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main">#66EA87</color>
     <color name="tabla_sombra">#839A89</color>
+    <color name="barra">#E7F1FF</color>
+    <color name="texto_botones">#115458</color>
 </resources>

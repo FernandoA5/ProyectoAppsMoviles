@@ -131,6 +131,7 @@ public class LoginActivity extends AppCompatActivity {
             lang_selected = 1;
         }
 
+        //SETTEANDO LA EL LOGO DE LA APP
         imageView = findViewById(R.id.ivLogo);
         iVIdioma = findViewById(R.id.iconoIdioma);
         Glide.with(this).load(LOGO).error(R.drawable.ic_launcher_background).into(imageView);
