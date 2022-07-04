@@ -16,6 +16,6 @@
     <dimen name="margin_title">15dp</dimen>
     <dimen name="logo_size">90dp</dimen>
     <dimen name="alto_botones">50dp</dimen>
-
-
+    <dimen name="foto_perfil">60dp</dimen>
+    <dimen name="iconos">25dp</dimen>
 </resources>

@@ -10,104 +10,161 @@
     <include
         android:id="@+id/tool_bar_station"
         layout="@layout/tool_bar_station" />
-            <Button
-                android:id="@+id/buttonGetData"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/alto_botones"
-                android:layout_marginHorizontal="@dimen/margin_buttons_menu_horizontal"
-                android:layout_marginTop="@dimen/margin_buttons_menu"
-                android:background="@mipmap/imagen_botones"
-                android:paddingHorizontal="@dimen/padding_menus"
-                android:text="@string/mandar_a_llamar_datos"
-                android:textColor="@color/texto_botones"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tool_bar_station" />
 
-            <Button
-                android:id="@+id/buttonReportsToday"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/alto_botones"
-                android:layout_marginHorizontal="@dimen/margin_buttons_menu_horizontal"
-                android:layout_marginTop="@dimen/margin_buttons_menu"
-                android:background="@mipmap/imagen_botones"
-                android:paddingHorizontal="@dimen/padding_menus"
-                android:text="@string/reportes_de_hoy"
-                android:textColor="@color/texto_botones"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/buttonGetData" />
+    <LinearLayout
+        android:id="@+id/lLUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar_station">
 
-            <Button
-                android:id="@+id/buttonReportLastWeek"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/alto_botones"
-                android:layout_marginHorizontal="@dimen/margin_buttons_menu_horizontal"
-                android:layout_marginTop="@dimen/margin_buttons_menu"
-                android:background="@mipmap/imagen_botones"
-                android:text="@string/reportes_semana_pasada"
-                android:textColor="@color/texto_botones"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buttonReportsToday" />
+        <ImageView
+            android:id="@+id/imagenPerfil"
+            android:layout_width="@dimen/foto_perfil"
+            android:layout_height="@dimen/foto_perfil"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="@dimen/iconos"
+            android:layout_marginTop="@dimen/iconos"
+            android:layout_marginBottom="@dimen/iconos"
+            android:src="@drawable/ic_launcher_foreground"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tool_bar_station"
+            tools:background="#FF00FF" />
 
-            <Button
-                android:id="@+id/buttonReportsSchedule"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/alto_botones"
-                android:layout_marginHorizontal="@dimen/margin_buttons_menu_horizontal"
-                android:layout_marginTop="@dimen/margin_buttons_menu"
-                android:background="@mipmap/imagen_botones"
-                android:text="@string/calendario_de_reportes"
-                android:textColor="@color/texto_botones"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buttonReportLastWeek" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Ejemplo"
+            android:textColor="@color/white"
+            android:textSize="21dp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/iconos"
+        app:layout_constraintBottom_toBottomOf="@id/lLUsuario"
+        app:layout_constraintTop_toBottomOf="@id/tool_bar_station">
+        <Button
+            android:id="@+id/btnVideoLlamada"
+            android:layout_width="@dimen/iconos"
+            android:layout_height="@dimen/iconos"
+            android:layout_gravity="center_vertical"
+            android:layout_marginHorizontal="15dp"
+            android:background="@mipmap/icono_video_llamada"
+            android:src="@drawable/ic_launcher_foreground" />
+        <Button
+            android:id="@+id/btnLlamadaVoz"
+            android:layout_width="@dimen/iconos"
+            android:layout_height="@dimen/iconos"
+            android:background="@mipmap/icono_llamada_voz"
+            android:layout_gravity="center_vertical" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonGetData"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alto_botones"
+        android:layout_marginHorizontal="@dimen/margin_buttons_menu_horizontal"
+        android:layout_marginTop="@dimen/margin_buttons_menu"
+        android:background="@mipmap/imagen_botones"
+        android:paddingHorizontal="@dimen/padding_menus"
+        android:text="@string/mandar_a_llamar_datos"
+        android:textColor="@color/texto_botones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lLUsuario" />
+
+    <Button
+        android:id="@+id/buttonReportsToday"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alto_botones"
+        android:layout_marginHorizontal="@dimen/margin_buttons_menu_horizontal"
+        android:layout_marginTop="@dimen/margin_buttons_menu"
+        android:background="@mipmap/imagen_botones"
+        android:paddingHorizontal="@dimen/padding_menus"
+        android:text="@string/reportes_de_hoy"
+        android:textColor="@color/texto_botones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonGetData" />
+
+    <Button
+        android:id="@+id/buttonReportLastWeek"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alto_botones"
+        android:layout_marginHorizontal="@dimen/margin_buttons_menu_horizontal"
+        android:layout_marginTop="@dimen/margin_buttons_menu"
+        android:background="@mipmap/imagen_botones"
+        android:text="@string/reportes_semana_pasada"
+        android:textColor="@color/texto_botones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonReportsToday" />
+
+    <Button
+        android:id="@+id/buttonReportsSchedule"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alto_botones"
+        android:layout_marginHorizontal="@dimen/margin_buttons_menu_horizontal"
+        android:layout_marginTop="@dimen/margin_buttons_menu"
+        android:background="@mipmap/imagen_botones"
+        android:text="@string/calendario_de_reportes"
+        android:textColor="@color/texto_botones"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonReportLastWeek" />
 
 
-            <LinearLayout
-                android:id="@+id/lLEstado"
-                android:layout_width="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="50dp"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:id="@+id/tVEstado"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Estado: "
-                    android:textStyle="bold"
-                    app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:textColor="@color/white"
-                    android:textSize="21sp" />
-                <TextView
-                    android:id="@+id/iVEstadoResultado"
-                    android:layout_width="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule"
-                    app:layout_constraintStart_toEndOf="@id/tVEstado"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:textStyle="bold"
-                    android:text="Desconectado"
-                    android:textColor="#FF0000"
-                    android:textSize="21sp" />
-            </LinearLayout>
-            <Button
-                android:id="@+id/btnCerrarSesion"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/alto_botones"
-                app:layout_constraintTop_toBottomOf="@id/lLEstado"
-                android:layout_marginHorizontal="@dimen/margin_buttons_menu_horizontal"
-                android:layout_marginTop="@dimen/margin_buttons_menu"
-                android:background="@mipmap/imagen_boton_logout"
-                android:textColor="@color/white"
-                android:text="Cerrar Sesión"
-                android:paddingHorizontal="@dimen/padding_menus"
+    <LinearLayout
+        android:id="@+id/lLEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule">
 
-                />
+        <TextView
+            android:id="@+id/tVEstado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Estado: "
+            android:textColor="@color/white"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule" />
+
+        <TextView
+            android:id="@+id/iVEstadoResultado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="Desconectado"
+            android:textColor="@color/estado_desconectado"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tVEstado"
+            app:layout_constraintTop_toBottomOf="@id/buttonReportsSchedule" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/alto_botones"
+        android:layout_marginHorizontal="@dimen/margin_buttons_menu_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="@mipmap/imagen_boton_logout"
+        android:paddingHorizontal="@dimen/alto_botones"
+        android:text="Cerrar Sesión"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/lLEstado"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
