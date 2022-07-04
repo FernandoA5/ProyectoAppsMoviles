@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#002077"
+    android:background="@mipmap/background_pantallas"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingLeft="@dimen/margin"
