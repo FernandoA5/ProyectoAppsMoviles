@@ -88,6 +88,9 @@
     <string name="presionResult">968.58 mbar</string>
     <string name="temperatura">Temperatura:</string>
     <string name="temperaturaResult">26.19 C°</string>
+    <string name="desactualizado">Desactualizado</string>
+    <string name="cerrar_sesi_n">Cerrar Sesión</string>
+    <string name="estado_">Estado:</string>
 
 
 </resources>
